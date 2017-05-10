@@ -999,7 +999,7 @@ class Smarty_Compiler extends Smarty {
 
 
         $_params = "array('smarty_include_tpl_file' => " . $include_file . ", 'smarty_include_vars' => array(".implode(',', (array)$arg_list)."))";
-        $output .= "\$this->_smarty_include($_params);\n" .
+        $output .= "Pg\\Shared\\TemplateEngine\\SmartyEngineService::getInstance()->_smarty_include($_params);\n" .
         "\$this->_tpl_vars = \$_smarty_tpl_vars;\n" .
         "unset(\$_smarty_tpl_vars);\n";
 
